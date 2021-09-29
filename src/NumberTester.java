@@ -97,7 +97,22 @@ public class NumberTester {
 
 
                 }else if(number1 == 3){
-                    
+
+                    boolean pali = false;
+                    int reverse = 0;
+                    int num = number2;
+                    do{
+                        reverse = reverse*10+(num%10);
+                        num /= 10;
+                    } while  (num > 0);
+                    //System.out.println(number2+";"+reverse);
+                    if(number2==reverse){
+                        System.out.println("PALINDROME");
+                        pali = true;
+                    }else if(pali == false){
+                        System.out.println("NO PALINDROME");
+                    }
+
                 }
 
                 /*System.out.println(number1+"; "+number2);*/
