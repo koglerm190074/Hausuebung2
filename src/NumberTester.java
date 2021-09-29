@@ -82,12 +82,12 @@ public class NumberTester implements NumberTest {
                     setPalindromeTester((number)->{
                         boolean pali = false;
                         int reverse = 0;
-                        int num = number2;
+                        int num = number;
                         do {
                             reverse = reverse * 10 + (num % 10);
                             num /= 10;
                         } while (num > 0);
-                        if (number2 == reverse) {
+                        if (number == reverse) {
                             System.out.println("PALINDROME");
                             pali = true;
                         } else if (pali == false) {
@@ -95,6 +95,7 @@ public class NumberTester implements NumberTest {
                         }
                         return false;
                     });
+                    palindromeTester.testNumber(number2);
 
                 } else {
                     System.out.println("...Fail...");
