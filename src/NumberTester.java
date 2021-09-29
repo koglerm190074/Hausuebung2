@@ -49,45 +49,53 @@ public class NumberTester implements NumberTest {
                 } else if (number1 == 2) {
                     //setPrimeTester();
                     //setPrimeTester.test;
-                    boolean[] ar = new boolean[number2 + 1];
-                    boolean prime = false;
-                    for (int i = 0; i < ar.length; i++) {
-                        ar[i] = true;
-                    }
-                    for (int i = 2; i < ar.length; i++) {
-                        for (int j = 2; j < ar.length; j++) {
-                            if ((i * j) >= ar.length) {
-                                break;
+                    setPrimeTester((number) -> {
+                        boolean[] ar = new boolean[number + 1];
+                        boolean prime = false;
+                        for (int i = 0; i < ar.length; i++) {
+                            ar[i] = true;
+                        }
+                        for (int i = 2; i < ar.length; i++) {
+                            for (int j = 2; j < ar.length; j++) {
+                                if ((i * j) >= ar.length) {
+                                    break;
+                                }
+                                ar[i * j] = false;
                             }
-                            ar[i * j] = false;
                         }
-                    }
-                    boolean boo = false;
-                    for (int i = 0; i < ar.length; i++) {
-                        if (ar[i] == true && i == number2) {
-                            System.out.println("PRIME");
-                            boo = true;
-                        }
-                    }
-                    if (boo == false) {
-                        System.out.println("NO PRIME");
-                    }
-                } else if (number1 == 3) {
+                        boolean boo = false;
 
-                    boolean pali = false;
-                    int reverse = 0;
-                    int num = number2;
-                    do {
-                        reverse = reverse * 10 + (num % 10);
-                        num /= 10;
-                    } while (num > 0);
-                    //System.out.println(number2+";"+reverse);
-                    if (number2 == reverse) {
-                        System.out.println("PALINDROME");
-                        pali = true;
-                    } else if (pali == false) {
-                        System.out.println("NO PALINDROME");
-                    }
+
+                            if (ar[number] == true ) {
+                                System.out.println("PRIME");
+                                boo = true;
+                            }else{
+                                System.out.println("NO PRIME");
+                            }
+
+
+                            return false;
+                    });
+                    primeTester.testNumber(number2);
+
+                } else if (number1 == 3) {
+                    setPalindromeTester((number)->{
+                        boolean pali = false;
+                        int reverse = 0;
+                        int num = number2;
+                        do {
+                            reverse = reverse * 10 + (num % 10);
+                            num /= 10;
+                        } while (num > 0);
+                        if (number2 == reverse) {
+                            System.out.println("PALINDROME");
+                            pali = true;
+                        } else if (pali == false) {
+                            System.out.println("NO PALINDROME");
+                        }
+                        return false;
+                    });
+
                 } else {
                     System.out.println("...Fail...");
                 }
