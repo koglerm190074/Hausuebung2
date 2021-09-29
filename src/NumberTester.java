@@ -40,10 +40,10 @@ public class NumberTester implements NumberTest {
                 int number2 = Integer.parseInt(arr[1]);
 
                 if (number1 == 1) {
-                    setOddEvenTester((int number)->number%2==0);
+                    setOddEvenTester((int number) -> number % 2 == 0);
                     if (oddTester.testNumber(number2)) {
                         System.out.println("EVEN");
-                    } else{
+                    } else {
                         System.out.println("ODD");
                     }
                 } else if (number1 == 2) {
@@ -66,20 +66,20 @@ public class NumberTester implements NumberTest {
                         boolean boo = false;
 
 
-                            if (ar[number] == true ) {
-                                System.out.println("PRIME");
-                                boo = true;
-                            }else{
-                                System.out.println("NO PRIME");
-                            }
+                        if (ar[number] == true) {
+                            System.out.println("PRIME");
+                            boo = true;
+                        } else {
+                            System.out.println("NO PRIME");
+                        }
 
 
-                            return false;
+                        return false;
                     });
                     primeTester.testNumber(number2);
 
                 } else if (number1 == 3) {
-                    setPalindromeTester((number)->{
+                    setPalindromeTester((number) -> {
                         boolean pali = false;
                         int reverse = 0;
                         int num = number;
@@ -98,18 +98,24 @@ public class NumberTester implements NumberTest {
                     palindromeTester.testNumber(number2);
 
                 } else {
-                    System.out.println("...Fail...");
+                    System.out.println("No correct Number");
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
+
+        } catch (NumberFormatException e) {
+            System.out.println("no Number");
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Out of Bounds");
+        }
+        /*finally {
             if (in != null)
                 try {
                     in.close();
                 } catch (IOException e) {
                 }
-        }
+        }*/
     }
 
     @Override
