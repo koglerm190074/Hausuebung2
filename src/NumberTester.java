@@ -54,11 +54,53 @@ public class NumberTester {
             String zeile = null;
             in.readLine();
             int count = 0;
-            String[] arr = null;//zuerst zeile einlesen dann in string array speichern und splitten dann gesplittet in int[]
+            String[] arr = null;//zuerst zeile einlesen dann in string array speichern und splitten dann gesplittet in int
             while ((zeile = in.readLine()) != null) {
-                arr[count] = String.valueOf(zeile.split("\\s+"));
-                int number1 = Integer.parseInt(arr[count]);
-                int number2 = Integer.parseInt(arr[count]);
+                arr = null;
+                //arr[count] = String.valueOf(zeile.split("\\s+"));
+                arr = zeile.split("\\s+");
+                int number1 = Integer.parseInt(arr[0]);
+                int number2 = Integer.parseInt(arr[1]);
+
+                if(number1 == 1){
+                    if((number2%2)==0){
+                        System.out.println("EVEN");
+                    }else if((number2%2)!=0){
+                        System.out.println("ODD");
+                    }
+                }else if(number1 == 2){
+                    boolean[] ar = new boolean[number2+1];
+                    boolean prime = false;
+                    for (int i = 0; i < ar.length; i++) {
+                        ar[i] = true;
+
+                    }
+                    for (int i = 2; i < ar.length; i++) {
+                        for (int j = 2; j < ar.length; j++) {
+                            if ((i * j) >= ar.length) {
+                                break;
+                            }
+                            ar[i * j] = false;
+                        }
+
+                    }
+                    boolean boo = false;
+                    for (int i = 0; i < ar.length; i++) {
+                        if (ar[i] == true && i == number2) {
+                            System.out.println("PRIME");
+                            boo = true;
+                        }
+                    }
+                    if(boo == false){
+                        System.out.println("NO PRIME");
+                    }
+
+
+                }else if(number1 == 3){
+                    
+                }
+
+                /*System.out.println(number1+"; "+number2);*/
                 /*list.add(zeile);*/
                 /*String[] split = zeile.split("\\s+");
                 int[] arr = new int[split.length];
