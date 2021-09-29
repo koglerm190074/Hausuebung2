@@ -16,7 +16,7 @@ public class Main {
         hjmfe.print();*/
 
         NumberTester numberTester = new NumberTester("file.txt");
-        numberTester.test();
+        numberTester.testFile();
 
     }
 }
