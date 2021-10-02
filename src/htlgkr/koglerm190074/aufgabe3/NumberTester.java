@@ -1,7 +1,9 @@
+package htlgkr.koglerm190074.aufgabe3;
+
+import htlgkr.koglerm190074.aufgabe3.NumberTest;
+import htlgkr.koglerm190074.aufgabe3.NumberTest2;
+
 import java.io.*;
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class NumberTester implements NumberTest, NumberTest2 {
     private NumberTest oddTester;
@@ -32,12 +34,7 @@ public class NumberTester implements NumberTest, NumberTest2 {
             in = new BufferedReader(new FileReader(fileName));
             String zeile = null;
             in.readLine();
-            int nullCount = 0;
-            while (nullCount!=2) {
-                zeile=in.readLine();
-                if(zeile==null){
-                    nullCount++;
-                }
+            while ((zeile=in.readLine())!=null) {
                 String[] arr = null;
                 arr = zeile.split("\\s+");
                 int number1 = Integer.parseInt(arr[0]);

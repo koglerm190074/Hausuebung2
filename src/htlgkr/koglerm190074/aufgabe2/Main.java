@@ -1,9 +1,11 @@
+package htlgkr.koglerm190074.aufgabe2;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        /*List<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<>();
 
         list.add("A1");
         list.add("B1");
@@ -13,10 +15,6 @@ public class Main {
 
         HalloJavamitForEach hjmfe = new HalloJavamitForEach(list);
 
-        hjmfe.print();*/
-
-        NumberTester numberTester = new NumberTester("file.txt");
-        numberTester.testFile();
-
+        hjmfe.print();
     }
 }
