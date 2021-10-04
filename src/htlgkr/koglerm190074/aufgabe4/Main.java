@@ -163,6 +163,59 @@ public class Main {
             System.out.println(nenner);
             return a;
         });
+        AbstractCalculator complexCalculator = new ComplexCalculator((a, b) -> {
+            Double a1 = a.getA();
+            Double b1 = b.getA();
+            Double a2 = a.getB();
+            Double b2 = b.getB();
+
+            Double result1 = a1+b1;
+            Double result2 = a2+b2;
+
+            System.out.print(result1);
+            System.out.print(" + ");
+            System.out.println(result2+"i");
+            return a;
+        }, (a, b) -> {
+            Double a1 = a.getA();
+            Double b1 = b.getA();
+            Double a2 = a.getB();
+            Double b2 = b.getB();
+
+            Double result1 = a1-b1;
+            Double result2 = a2-b2;
+
+            System.out.print(result1);
+            System.out.print(" - ");
+            System.out.println(result2+"i");
+            return a;
+        }, (a, b) -> {
+            Double a1 = a.getA();
+            Double b1 = b.getA();
+            Double a2 = a.getB();
+            Double b2 = b.getB();
+
+            Double result1 = a1*b1+a1*b2;
+            Double result2 = a2*b1+a2*b2;
+
+            System.out.print(result1);
+            System.out.print(" - ");
+            System.out.println(result2+"i");
+            return a;
+        }, (a, b) -> {
+            Double a1 = a.getA();
+            Double a2 = a.getB();
+            Double b1 = b.getA();
+            Double b2 = b.getB();
+
+            Double result = a1/b1;
+            Double nenner = a2/b2;
+
+            System.out.println(result);
+            System.out.println(" --- ");
+            System.out.println(nenner);
+            return a;
+        });
 
         boolean running = true;
 
@@ -234,14 +287,16 @@ public class Main {
                 case 3:
                     switch (cO){
                         case 1:
-                            rationalCalculator.add(n1, n2);
+                             complexCalculator.add(n1, n2);
                             break;
                         case 2:
-                            rationalCalculator.subtract(n1, n2);
+                            complexCalculator.subtract(n1, n2);
                             break;
                         case 3:
+                            complexCalculator.multiply(n1, n2);
                             break;
                         case 4:
+                            complexCalculator.divide(n1, n2);
                             break;
                         case 5:
                             break;
