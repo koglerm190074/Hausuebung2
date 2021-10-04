@@ -204,16 +204,16 @@ public class Main {
             return a;
         }, (a, b) -> {
             Double a1 = a.getA();
-            Double a2 = a.getB();
             Double b1 = b.getA();
+            Double a2 = a.getB();
             Double b2 = b.getB();
 
-            Double result = a1/b1;
-            Double nenner = a2/b2;
+            Double result1 = a1+b1*a2+b2;
+            Double result2 = a2+b2*a2+b2;
 
-            System.out.println(result);
-            System.out.println(" --- ");
-            System.out.println(nenner);
+            System.out.print(result1);
+            System.out.print(" - ");
+            System.out.println(result2+"i");
             return a;
         });
 
